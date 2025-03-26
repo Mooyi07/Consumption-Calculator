@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="card shadow mb-4">
-        <div class="card-header py-3" style="display:flex; align-items: center; justify-content:space-between">
+        <div class="card-header py-3 d-flex align-items-center justify-content-between">
             <h6>Bill Component</h6>
             <input type="text" id="initialValue" placeholder="Enter value of KWH" onkeyup="showHint(this.value)">
         </div>
@@ -24,198 +24,44 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th class="text-info">NEPC RELATED CHARGES</th>
-                            <th></th> 
-                            <th></th>
-                            <th></th>
-                        </tr>
-                        <tr class="mb-4">
-                            <th class="description-charges">Distribution Charge</th>
-                            <th class="basePrice"></th>
-                            <th>0.2748</th>
-                            <th class="amount-price" id="distCharge"></th>
-                        </tr>
-                        <tr class="mb-4">
-                            <th class="description-charges">Demand Charge</th>
-                            <th></th>
-                            <th></th>
-                            <th class="amount-price">0.00</th>
-                        </tr>
-                        <tr class="mb-4">
-                            <th class="description-charges">Supply Charge</th>
-                            <th class="basePrice"></th>
-                            <th>0.4140</th>
-                            <th class="amount-price" id="suppCharge"></th>
-                        </tr>
-                        <tr class="mb-4">
-                            <th class="description-charges">Metering Charge</th>
-                            <th class="basePrice"></th>
-                            <th>0.3460</th>
-                            <th class="amount-price" id="meterCharge"></th>
-                        </tr>
-                        <tr class="mb-4">
-                            <th class="description-charges">Retail Metering Charge</th>
-                            <th></th>
-                            <th></th>
-                            <th class="amount-price">5.00</th>
-                        </tr>
-                        <tr class="mb-4">
-                            <th class="description-charges">RFSC</th>
-                            <th class="basePrice"></th>
-                            <th>0.1518</th>
-                            <th class="amount-price" id="rfsc"></th>
-                        </tr>
-                        <tr class="mb-4">
-                            <th></th>
-                            <th></th>
-                            <th class="text-primary">Sub Total</th>
-                            <th class="amount-price" id="npc" class="text-primary"></th>
-                        </tr>
-                        <tr>
-                            <th class="text-info">SUPPLIER RELATED CHARGES</th>
-                            <th></th> 
-                            <th></th>
-                            <th></th>
-                        </tr>
-                        <tr class="mb-4">
-                            <th class="description-charges">Generation Charge</th>
-                            <th class="basePrice"></th>
-                            <th>7.3141</th>
-                            <th class="amount-price" id="genCharge"></th>
-                        </tr>
-                        <tr class="mb-4">
-                            <th class="description-charges">ILP Recover</th>
-                            <th></th>
-                            <th></th>
-                            <th class="amount-price">0.00</th>
-                        </tr>
-                        <tr class="mb-4">
-                            <th class="description-charges">Power Act Reduction</th>
-                            <th></th>
-                            <th></th>
-                            <th class="amount-price">0.00</th>
-                        </tr>
-                        <tr class="mb-4">
-                            <th class="description-charges">Transmission Charge</th>
-                            <th class="basePrice"></th>
-                            <th>1.3272</th>
-                            <th class="amount-price" id="transCharge"></th>
-                        </tr>
-                        <tr class="mb-4">
-                            <th class="description-charges">System Loss Charge</th>
-                            <th class="basePrice"></th>
-                            <th>0.9543</th>
-                            <th class="amount-price" id="sysLossCharge"></th>
-                        </tr>
-                        <tr class="mb-4">
-                            <th></th>
-                            <th></th>
-                            <th class="text-primary">Sub Total</th>
-                            <th class="amount-price" id="src" class="text-primary"></th>
-                        </tr>
-                        <tr>
-                            <th class="text-info">SUBSIDIES</th>
-                            <th></th> 
-                            <th></th>
-                            <th class="amount-price"></th>
-                        </tr>
-                        <tr class="mb-4">
-                            <th class="description-charges">Lifeline Rate Charge</th>
-                            <th class="basePrice"></th>
-                            <th>0.0006</th>
-                            <th class="amount-price" id="lrc"></th>
-                        </tr>
-                        <tr class="mb-4">
-                            <th class="description-charges">Senior Citizen Subsidy</th>
-                            <th></th>
-                            <th>0.0002</th>
-                            <th class="amount-price" id="seniorCitSub">0.05</th>
-                        </tr>
-                        <tr class="mb-4">
-                            <th></th>
-                            <th></th>
-                            <th class="text-primary">Sub Total</th>
-                            <th class="amount-price" id="subsidies" class="text-primary"></th>
-                        </tr>
-                        <tr>
-                            <th class="text-info">LOCAL GOVERNMENT CHARGES</th>
-                            <th></th> 
-                            <th></th>
-                            <th></th>
-                        </tr>
-                        <tr class="mb-4">
-                            <th class="description-charges">Franchise Tax</th>
-                            <th></th>
-                            <th></th>
-                            <th class="amount-price">0.00</th>
-                        </tr>
-                        <tr class="mb-4">
-                            <th class="description-charges">RPT Charge</th>
-                            <th></th>
-                            <th></th>
-                            <th class="amount-price">0.00</th>
-                        </tr>
-                        <tr>
-                            <th class="text-info">GOVERNMENT CHARGES</th>
-                            <th></th> 
-                            <th></th>
-                            <th class="amount-price"></th>
-                        </tr>
-                        <tr class="mb-4">
-                            <th class="description-charges">VAT on Generation</th>
-                            <th class="basePrice"></th>
-                            <th>0.5129</th>
-                            <th class="amount-price" id="vatGen"></th>
-                        </tr>
-                        <tr class="mb-4">
-                            <th class="description-charges">VAT on Transmission</th>
-                            <th id="vatOnTrans"></th>
-                            <th>0.1200</th>
-                            <th class="amount-price" id="vatTrans"></th>
-                        </tr>
-                        <tr class="mb-4">
-                            <th class="description-charges">VAT on System Loss</th>
-                            <th class="basePrice"></th>
-                            <th>0.0765</th>
-                            <th class="amount-price" id="vatSystLoss"></th>
-                        </tr>
-                        <tr class="mb-4">
-                            <th class="description-charges">VAT on DSM and Other Charges</th>
-                            <th id="vatDSM"></th>
-                            <th>0.1200</th>
-                            <th class="amount-price" id="vatOtherCharge"></th>
-                        </tr>
-                        <tr class="mb-4">
-                            <th class="description-charges">NPC Stranded Debts</th>
-                            <th class="basePrice"></th>
-                            <th>0.0428</th>
-                            <th class="amount-price" id="npcStrandDebts"></th>
-                        </tr>
-                        <tr class="mb-4">
-                            <th class="description-charges">Missionary Electrification</th>
-                            <th class="basePrice"></th>
-                            <th>0.1805</th>
-                            <th class="amount-price" id="missionaryElect"></th>
-                        </tr>
-                        <tr class="mb-4">
-                            <th class="description-charges">Environmental Change</th>
-                            <th class="basePrice"></th>
-                            <th>0.0017</th>
-                            <th class="amount-price" id="enviroCharge"></th>
-                        </tr>
-                        <tr class="mb-4">
-                            <th class="description-charges">FIT - Allowance</th>
-                            <th class="basePrice"></th>
-                            <th>0.0838</th>
-                            <th class="amount-price" id="fitAllow"></th>
-                        </tr>
-                        <tr>
-                            <th class="text-info">TOTAL CURRENT BILL AMOUNT</th>
-                            <th></th> 
-                            <th></th>
-                            <th id="totalBill" class="text-info"></th>
-                        </tr>
+                        <!-- NEPC Related Charges -->
+                        <tr><th class="text-info" colspan="4">NEPC RELATED CHARGES</th></tr>
+                        <tr><th class="description-charges">Distribution Charge</th><td class="basePrice"></td><td>0.2748</td><td id="distCharge"></td></tr>
+                        <tr><th class="description-charges">Demand Charge</th><td></td><td></td><td>0.00</td></tr>
+                        <tr><th class="description-charges">Supply Charge</th><td class="basePrice"></td><td>0.4140</td><td id="suppCharge"></td></tr>
+                        <tr><th class="description-charges">Metering Charge</th><td class="basePrice"></td><td>0.3460</td><td id="meterCharge"></td></tr>
+                        <tr><th class="description-charges">Retail Metering Charge</th><td></td><td></td><td>5.00</td></tr>
+                        <tr><th class="description-charges">RFSC</th><td class="basePrice"></td><td>0.1518</td><td id="rfsc"></td></tr>
+                        <tr><td colspan="2"></td><th class="text-primary">Sub Total</th><td id="npc" class="text-primary"></td></tr>
+                        
+                        <!-- Supplier Related Charges -->
+                        <tr><th class="text-info" colspan="4">SUPPLIER RELATED CHARGES</th></tr>
+                        <tr><th class="description-charges">Generation Charge</th><td class="basePrice"></td><td>7.3141</td><td id="genCharge"></td></tr>
+                        <tr><th class="description-charges">ILP Recover</th><td></td><td></td><td>0.00</td></tr>
+                        <tr><th class="description-charges">Power Act Reduction</th><td></td><td></td><td>0.00</td></tr>
+                        <tr><th class="description-charges">Transmission Charge</th><td class="basePrice"></td><td>1.3272</td><td id="transCharge"></td></tr>
+                        <tr><th class="description-charges">System Loss Charge</th><td class="basePrice"></td><td>0.9543</td><td id="sysLossCharge"></td></tr>
+                        <tr><td colspan="2"></td><th class="text-primary">Sub Total</th><td id="src" class="text-primary"></td></tr>
+                        
+                        <!-- Subsidies -->
+                        <tr><th class="text-info" colspan="4">SUBSIDIES</th></tr>
+                        <tr><th class="description-charges">Lifeline Rate Charge</th><td class="basePrice"></td><td>0.0006</td><td id="lrc"></td></tr>
+                        <tr><th class="description-charges">Senior Citizen Subsidy</th><td></td><td>0.0002</td><td id="seniorCitSub">0.05</td></tr>
+                        <tr><td colspan="2"></td><th class="text-primary">Sub Total</th><td id="subsidies" class="text-primary"></td></tr>
+                        
+                        <!-- Government Charges -->
+                        <tr><th class="text-info" colspan="4">GOVERNMENT CHARGES</th></tr>
+                        <tr><th class="description-charges">VAT on Generation</th><td class="basePrice"></td><td>0.5129</td><td id="vatGen"></td></tr>
+                        <tr><th class="description-charges">VAT on Transmission</th><td id="vatOnTrans"></td><td>0.1200</td><td id="vatTrans"></td></tr>
+                        <tr><th class="description-charges">VAT on System Loss</th><td class="basePrice"></td><td>0.0765</td><td id="vatSystLoss"></td></tr>
+                        <tr><th class="description-charges">VAT on DSM and Other Charges</th><td id="vatDSM"></td><td>0.1200</td><td id="vatOtherCharge"></td></tr>
+                        <tr><th class="description-charges">NPC Stranded Debts</th><td class="basePrice"></td><td>0.0428</td><td id="npcStrandDebts"></td></tr>
+                        <tr><th class="description-charges">Missionary Electrification</th><td class="basePrice"></td><td>0.1805</td><td id="missionaryElect"></td></tr>
+                        <tr><th class="description-charges">Environmental Charge</th><td class="basePrice"></td><td>0.0017</td><td id="enviroCharge"></td></tr>
+                        <tr><th class="description-charges">FIT - Allowance</th><td class="basePrice"></td><td>0.0838</td><td id="fitAllow"></td></tr>
+                        
+                        <!-- Total Bill -->
+                        <tr><th class="text-info" colspan="3">TOTAL CURRENT BILL AMOUNT</th><td id="totalBill" class="text-info"></td></tr>
                     </tbody>
                 </table>
             </div>
