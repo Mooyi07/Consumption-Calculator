@@ -49,6 +49,8 @@ const charges = {
     // Update rates as needed
 };
 ```
+## License
+This project is open-source under the MIT License.
 
 ## Author
 Developed by **Mooyi**. Contributions are welcome!
