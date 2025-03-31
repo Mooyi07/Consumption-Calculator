@@ -16,9 +16,9 @@ function showHint(str) {
 function formulaVal(value) {
     const charges = {
         distCharge: 0.2748, suppCharge: 0.4140, meterCharge: 0.3460, rfsc: 0.1518,
-        genCharge: 7.3141, transCharge: 1.3272, sysLossCharge: 0.9543, lrc: 0.0006,
-        vatGen: 0.5129, vatTransRate: 0.1200, vatSysLoss: 0.0765, npcStrandDebts: 0.0428,
-        missionaryElect: 0.1805, enviroCharge: 0.0017, fitAllow: 0.0838, seniorCitSub: 0.05
+        genCharge: 6.6117, transCharge: 1.4528, sysLossCharge: 0.9333, lrc: 0.0006,
+        vatGen: 0.5036, vatTransRate: 0.1200, vatSysLoss: 0.0810, npcStrandDebts: 0.0428,
+        missionaryElect: 0.1949, enviroCharge: 0.0044, fitAllow: 0.1189, seniorCitSub: 0.0010
     };
 
     function setValue(id, amount) {
