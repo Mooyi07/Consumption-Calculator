@@ -1,5 +1,8 @@
 const baseP = document.getElementsByClassName("basePrice");
 
+updateBasePrice(0); // Initialize with 0
+formulaVal(0); // Initialize with 0
+
 function updateBasePrice(value) {
     const formattedValue = value.toFixed(2);
     for (let i = 0; i < baseP.length; i++) {
@@ -8,7 +11,7 @@ function updateBasePrice(value) {
 }
 
 function showHint(str) {
-    const initialVal = str.length ? parseFloat(str) : 0;
+    initialVal = str.length ? parseFloat(str) : 0;
     updateBasePrice(initialVal);
     formulaVal(initialVal);
 }
