@@ -18,7 +18,6 @@ The **Consumption Calculator** is a web application designed to calculate electr
 
 ## 📁 File Structure
 ```
-project-folder/
 │── index.html          # Main HTML file
 │── styles.css          # Stylesheet for UI design
 │── formula.js          # JavaScript file for calculations
@@ -29,8 +28,8 @@ project-folder/
 
 ### 🧬 Step 1: Clone the Repository
 ```sh
-git clone https://github.com/your-repository-url.git
-cd project-folder
+git clone https://github.com/Mooyi07/Consumption-Calculator.git
+cd consumption-calculator
 ```
 
 ### 🌐 Step 2: Open in Browser  
