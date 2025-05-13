@@ -1,7 +1,7 @@
 const baseP = document.getElementsByClassName("basePrice");
 
 updateBasePrice(0); // Initialize with 0
-formulaVal(0); // Initialize with 0
+formulaVal(0);      // Initialize with 0
 
 function updateBasePrice(value) {
     const formattedValue = value.toFixed(2);
@@ -11,9 +11,19 @@ function updateBasePrice(value) {
 }
 
 function showHint(str) {
-    initialVal = str.length ? parseFloat(str) : 0;
+    const initialVal = str.length ? parseFloat(str) : 0;
     updateBasePrice(initialVal);
     formulaVal(initialVal);
+}
+
+function setValue(id, amount) {
+    const el = document.getElementById(id);
+    if (el) el.innerHTML = amount.toFixed(2);
+    return amount;
+}
+
+function charge(id, rate, base) {
+    return setValue(id, rate * base);
 }
 
 function formulaVal(value) {
@@ -24,42 +34,64 @@ function formulaVal(value) {
         missionaryElect: 0.1949, enviroCharge: 0.0044, fitAllow: 0.1189, seniorCitSub: 0.0010
     };
 
-    function setValue(id, amount) {
-        document.getElementById(id).innerHTML = amount.toFixed(2);
-        return amount;
-    }
+    const nepcrc = setValue("npc",
+        charge("distCharge", charges.distCharge, value) +
+        charge("suppCharge", charges.suppCharge, value) +
+        charge("meterCharge", charges.meterCharge, value) +
+        charge("rfsc", charges.rfsc, value) + 5
+    );
 
-    const nepcrc = setValue("npc", 
-        setValue("distCharge", charges.distCharge * value) +
-        setValue("suppCharge", charges.suppCharge * value) +
-        setValue("meterCharge", charges.meterCharge * value) +
-        setValue("rfsc", charges.rfsc * value) + 5);
+    const suppRC = setValue("src",
+        charge("genCharge", charges.genCharge, value) +
+        charge("transCharge", charges.transCharge, value) +
+        charge("sysLossCharge", charges.sysLossCharge, value)
+    );
 
-    const suppRC = setValue("src", 
-        setValue("genCharge", charges.genCharge * value) +
-        setValue("transCharge", charges.transCharge * value) +
-        setValue("sysLossCharge", charges.sysLossCharge * value));
+    const subsidies = setValue("subsidies",
+        charge("lrc", charges.lrc, value) + charges.seniorCitSub
+    );
 
-    const subsidies = setValue("subsidies", 
-        setValue("lrc", charges.lrc * value) + charges.seniorCitSub);
+    charge("vatGen", charges.vatGen, value);
+    charge("vatTrans", charges.vatTransRate, suppRC);
+    charge("vatSystLoss", charges.vatSysLoss, value);
 
-    setValue("vatGen", charges.vatGen * value);
-    setValue("vatTrans", charges.vatTransRate * suppRC);
-    setValue("vatSystLoss", charges.vatSysLoss * value);
-    setValue("vatOtherCharge", charges.vatTransRate * (nepcrc + subsidies));
+    const vatOther = charges.vatTransRate * (nepcrc + subsidies);
+    setValue("vatOtherCharge", vatOther);
+
     setValue("vatDSM", nepcrc + subsidies);
-    setValue("npcStrandDebts", charges.npcStrandDebts * value);
-    setValue("missionaryElect", charges.missionaryElect * value);
-    setValue("enviroCharge", charges.enviroCharge * value);
-    setValue("fitAllow", charges.fitAllow * value);
 
-    document.getElementById("totalBill").innerHTML = '₱ ' + number_format(
-        nepcrc + subsidies + suppRC + (charges.vatGen * value) + (charges.vatTransRate * suppRC) + 
-        (charges.vatSysLoss * value) + (charges.vatTransRate * (nepcrc + subsidies)) +
-        (charges.npcStrandDebts * value) + (charges.missionaryElect * value) +
-        (charges.enviroCharge * value) + (charges.fitAllow * value), 2);
+    charge("npcStrandDebts", charges.npcStrandDebts, value);
+    charge("missionaryElect", charges.missionaryElect, value);
+    charge("enviroCharge", charges.enviroCharge, value);
+    charge("fitAllow", charges.fitAllow, value);
+
+    const total = nepcrc + subsidies + suppRC +
+        charges.vatGen * value +
+        charges.vatTransRate * suppRC +
+        charges.vatSysLoss * value +
+        vatOther +
+        charges.npcStrandDebts * value +
+        charges.missionaryElect * value +
+        charges.enviroCharge * value +
+        charges.fitAllow * value;
+
+    document.getElementById("totalBill").innerHTML = formatCurrency(total);
+}
+
+function formatCurrency(value) {
+    return '₱ ' + number_format(value, 2);
 }
 
 function number_format(number, decimals = 2, dec_point = '.', thousands_sep = ',') {
-    return number.toLocaleString(undefined, { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
+    return number.toLocaleString(undefined, {
+        minimumFractionDigits: decimals,
+        maximumFractionDigits: decimals
+    });
+}
+
+// Optional: debounce for input field
+let debounceTimer;
+function debounceShowHint(str) {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => showHint(str), 300);
 }
