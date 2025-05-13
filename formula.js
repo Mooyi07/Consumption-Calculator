@@ -3,6 +3,14 @@ const baseP = document.getElementsByClassName("basePrice");
 updateBasePrice(0); // Initialize with 0
 formulaVal(0);      // Initialize with 0
 
+// Optional: debounce for input field
+let debounceTimer;
+function debounceShowHint(str) {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => showHint(str), 300);
+}
+
+
 function updateBasePrice(value) {
     const formattedValue = value.toFixed(2);
     for (let i = 0; i < baseP.length; i++) {
@@ -87,11 +95,4 @@ function number_format(number, decimals = 2, dec_point = '.', thousands_sep = ',
         minimumFractionDigits: decimals,
         maximumFractionDigits: decimals
     });
-}
-
-// Optional: debounce for input field
-let debounceTimer;
-function debounceShowHint(str) {
-    clearTimeout(debounceTimer);
-    debounceTimer = setTimeout(() => showHint(str), 300);
 }
