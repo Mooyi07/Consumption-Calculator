@@ -4,13 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Consumption Calculator by Mooyi</title>
-  <meta name="description" 
-    content="A user-friendly javascript-based consumption calculator for tracking and analyzing your electrical 
-            cost with taxes added. Ideal for personal use, or for people who wants to check their monthly consumption of Negros Power.">
+  <meta name="description" content="A user-friendly javascript-based consumption calculator for tracking and analyzing your electrical cost with taxes added.">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/x-icon" href="logo.png" />
-
-  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <main class="card">
@@ -29,13 +25,8 @@
     <section class="card-body table-responsive">
       <table>
         <tbody>
-          <!-- Base Price -->
-          <tr>
-            <td data-label="Base kWh">Base kWh</td>
-            <td><span class="basePrice">0.00</span></td>
-          </tr>
+          <tr><td data-label="Base kWh">Base kWh</td><td><span class="basePrice">0.00</span></td></tr>
 
-          <!-- NEPCRC -->
           <tr><td colspan="2"><strong>NEPCRC Charges</strong></td></tr>
           <tr><td data-label="Distribution Charge">Distribution Charge</td><td id="distCharge">0.00</td></tr>
           <tr><td data-label="Supply Charge">Supply Charge</td><td id="suppCharge">0.00</td></tr>
@@ -43,20 +34,17 @@
           <tr><td data-label="RFSC">RFSC</td><td id="rfsc">0.00</td></tr>
           <tr><td data-label="NEPCRC Subtotal">NEPCRC Subtotal</td><td id="npc">0.00</td></tr>
 
-          <!-- SUPP -->
           <tr><td colspan="2"><strong>SUPP Charges</strong></td></tr>
           <tr><td data-label="Generation Charge">Generation Charge</td><td id="genCharge">0.00</td></tr>
           <tr><td data-label="Transmission Charge">Transmission Charge</td><td id="transCharge">0.00</td></tr>
           <tr><td data-label="System Loss Charge">System Loss Charge</td><td id="sysLossCharge">0.00</td></tr>
           <tr><td data-label="SUPP Subtotal">SUPP Subtotal</td><td id="src">0.00</td></tr>
 
-          <!-- Subsidies -->
           <tr><td colspan="2"><strong>Subsidies</strong></td></tr>
           <tr><td data-label="Lifeline Rate Charge">Lifeline Rate Charge</td><td id="lrc">0.00</td></tr>
           <tr><td data-label="Senior Citizen Subsidy">Senior Citizen Subsidy</td><td>0.0010</td></tr>
           <tr><td data-label="Subsidies Subtotal">Subsidies Subtotal</td><td id="subsidies">0.00</td></tr>
 
-          <!-- VAT -->
           <tr><td colspan="2"><strong>VAT Charges</strong></td></tr>
           <tr><td data-label="VAT on Generation">VAT on Generation</td><td id="vatGen">0.00</td></tr>
           <tr><td data-label="VAT on Transmission">VAT on Transmission</td><td id="vatTrans">0.00</td></tr>
@@ -64,14 +52,12 @@
           <tr><td data-label="VAT on Other Charges">VAT on Other Charges</td><td id="vatOtherCharge">0.00</td></tr>
           <tr><td data-label="VAT DSM Total">VAT DSM Total</td><td id="vatDSM">0.00</td></tr>
 
-          <!-- Other Charges -->
           <tr><td colspan="2"><strong>Other Charges</strong></td></tr>
           <tr><td data-label="NPC Stranded Debts">NPC Stranded Debts</td><td id="npcStrandDebts">0.00</td></tr>
           <tr><td data-label="Missionary Electrification">Missionary Electrification</td><td id="missionaryElect">0.00</td></tr>
           <tr><td data-label="Environmental Charge">Environmental Charge</td><td id="enviroCharge">0.00</td></tr>
           <tr><td data-label="FIT-All Allowance">FIT-All Allowance</td><td id="fitAllow">0.00</td></tr>
 
-          <!-- Total -->
           <tr>
             <td data-label="Total Amount" class="amount-price"><strong>Total Bill</strong></td>
             <td id="totalBill" class="amount-price">₱ 0.00</td>
@@ -80,7 +66,6 @@
       </table>
     </section>
   </main>
-
   <script src="formula.js"></script>
 </body>
 </html>
