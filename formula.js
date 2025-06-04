@@ -37,8 +37,8 @@ function charge(id, rate, base) {
 function formulaVal(value) {
     const charges = {
         distCharge: 0.2748, suppCharge: 0.4140, meterCharge: 0.3460, rfsc: 0.1518,
-        genCharge: 7.1897, transCharge: 1.5632, sysLossCharge: 1.0241, lrc: 0.0007,
-        vatGen: 0.5602, vatTransRate: 0.1200, vatSysLoss: 0.0900, npcStrandDebts: 0.0428,
+        genCharge: 6.8471, transCharge: 1.3367, sysLossCharge: 0.9769, lrc: 0.0006,
+        vatGen: 0.5386, vatTransRate: 0.1200, vatSysLoss: 0.0856, npcStrandDebts: 0.0428,
         missionaryElect: 0.1949, enviroCharge: 0.0044, fitAllow: 0.1189, seniorCitSub: 0.0010
     };
 
