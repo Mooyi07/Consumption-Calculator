@@ -36,10 +36,10 @@ function charge(id, rate, base) {
 
 function formulaVal(value) {
     const charges = {
-        distCharge: 0.2748, suppCharge: 0.4140, meterCharge: 0.3460, rfsc: 0.1518,
-        genCharge: 7.1850, transCharge: 1.4310, sysLossCharge: 1.1087, lrc: 0.0006,
-        vatGen: 0.5456, vatTransRate: 0.1200, vatSysLoss: 0.0951, npcStrandDebts: 0.0428,
-        missionaryElect: 0.1949, enviroCharge: 0.0044, fitAllow: 0.1189, seniorCitSub: 0.0009
+        distCharge: 0.2748, suppCharge: 0.4140, meterCharge: 0.3460, rfsc: 0.3104,
+        genCharge: 6.9717, transCharge: 1.3657, sysLossCharge: 1.0478, lrc: 0.0006,
+        vatGen: 0.5124, vatTransRate: 0.1141, vatSysLoss: 0.0866, npcStrandDebts: 0.0428,
+        missionaryElect: 0.1949, enviroCharge: 0.0025, fitAllow: 0.2011, seniorCitSub: 0.0006
     };
 
     const nepcrc = setValue("npc",
